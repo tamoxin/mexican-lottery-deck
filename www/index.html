@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <!-- <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"> -->
+
+        <!-- materialize mobile -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Lotería Mexicana</title>
+
+        <!-- design -->
+        <link rel="stylesheet" href="css/materialize.min.css">
+    </head>
+
+    <body id="page" class="grey lighten-2">
+
+            <nav>
+                <div class="nav-wrapper light-blue">
+                    <a class="brand-logo center black-text">Lotería</a>
+                    <ul id="slide-out" class="sidenav">
+                        <li><a href="index.html"><i class="material-icons">casino</i>¡Corre!</a></li>
+                        <li><a href="cartamayor.html"><i class="material-icons">gavel</i>Carta Mayor</a></li>
+                        <li><div class="divider"></div></li>
+                        <li>
+                            <div class="switch">
+                                <label class="right ">
+                                <input checked="" type="checkbox">
+                                <span class="lever"></span>
+                                </label>
+                            </div>
+                        </li>
+                        <li><a><i class="material-icons">volume_up</i>Volumen</a></li>
+                        <li><a href="#"><i class="material-icons">tune</i>Configuración</a></li>
+                        <li><div class="divider"></div></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=me.marcocarrizales.violin"><i class="material-icons">favorite</i>Calificar en Play Store</a></li>
+                    </ul>
+                    <a href="#" data-target="slide-out" class="sidenav-trigger black-text"><i class="material-icons">menu</i></a>
+                </div>
+            </nav>
+
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1 m6 offset-m3 ">
+                    <img src="img/cards/01.png.webp" alt="card" class="responsive-img z-depth-5" id="card"/>
+                </div>
+                <div class="col s3">
+                    <a class="waves-effect waves-light btn amber accent-3 black-text" id="run"><i class="material-icons" id="play_icon">play_arrow</i></a>
+                </div>
+                <div class="col s3 offset-s6">
+                    <a class="waves-effect waves-light btn right amber accent-3 black-text" id="stop"><i class="material-icons" id="stop_icon">stop</i></a>
+                </div>
+            </div>
+        </div>
+
+        <!--JavaScript at end of body for optimized loading-->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
