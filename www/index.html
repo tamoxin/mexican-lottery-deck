@@ -28,40 +28,56 @@
 
     <body id="page" class="grey lighten-2">
 
-            <nav>
-                <div class="nav-wrapper deep-orange">
-                    <a class="brand-logo center black-text" id="logo">Lotería</a>
-                    <ul id="slide-out" class="sidenav">
-                        <li><a><i class="material-icons">casino</i>¡Corre!</a></li>
-                        <li><a href="cartamayor.html"><i class="material-icons">gavel</i>Carta Mayor</a></li>
-                        <li><div class="divider"></div></li>
-                        <li>
-                            <div class="switch">
-                                <label class="right ">
-                                <input checked="" type="checkbox">
-                                <span class="lever"></span>
-                                </label>
-                            </div>
-                        </li>
-                        <li><a><i class="material-icons">volume_up</i>Volumen</a></li>
-                        <li><a href="#"><i class="material-icons">tune</i>Configuración</a></li>
-                        <li><div class="divider"></div></li>
-                        <li><a href="https://play.google.com/store/apps/details?id=me.marcocarrizales.violin"><i class="material-icons">favorite</i>Calificar en Play Store</a></li>
-                    </ul>
-                    <a href="#" data-target="slide-out" class="sidenav-trigger black-text"><i class="material-icons">menu</i></a>
-                </div>
-            </nav>
+        <nav>
+            <div class="nav-wrapper deep-orange">
+                <a class="brand-logo center black-text" id="logo">Lotería</a>
+                <ul id="slide-out" class="sidenav">
+                    <li><a><i class="material-icons">casino</i>¡Corre!</a></li>
+                    <li><a href="cartamayor.html"><i class="material-icons">gavel</i>Carta Mayor</a></li>
+                    <li><div class="divider"></div></li>
+                    <li>
+                        <div class="switch">
+                            <label class="right ">
+                            <input checked="" type="checkbox">
+                            <span class="lever"></span>
+                            </label>
+                        </div>
+                    </li>
+                    <li><a><i class="material-icons">volume_up</i>Volumen</a></li>
+                    <li><a href="#"><i class="material-icons">tune</i>Configuración</a></li>
+                    <li><div class="divider"></div></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=me.marcocarrizales.violin"><i class="material-icons">favorite</i>Calificar en Play Store</a></li>
+                </ul>
+                <a href="#" data-target="slide-out" class="sidenav-trigger black-text"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
 
         <div class="container">
             <div class="row">
-                <div class="col s10 offset-s1 m6 offset-m3 ">
+                <!-- Cartas -->
+                <!-- <div class="col s10 offset-s1 m6 offset-m3 ">
                     <img src="img/cards/01.png.webp" alt="card" class="responsive-img z-depth-5" id="card"/>
+                </div> -->
+                <div class="col s10 offset-s1 ">
+                    <div class="carousel carousel-slider z-depth-5 ">
+                        <a class="carousel-item "><img src="img/cards/09.png.webp" class="littleSpace"></a>
+                        <a class="carousel-item "><img src="img/cards/43.png.webp" class="littleSpace"></a>
+                        <a class="carousel-item "><img src="img/cards/05.png.webp" class="littleSpace"></a>
+                        <a class="carousel-item "><img src="img/cards/12.png.webp" class="littleSpace"></a>
+                        <a class="carousel-item "><img src="img/cards/45.png.webp" class="littleSpace"></a>
+                        <a class="carousel-item "><img src="img/cards/10.png.webp" class="littleSpace"></a>
+                    </div>
                 </div>
-                <div class="col s3">
-                    <a class="waves-effect waves-light btn amber accent-3 black-text" id="run"><i class="material-icons" id="play_icon">play_arrow</i></a>
+                <!-- Fin de cartas -->
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col s3 ">
+                    <a class="waves-effect waves-light btn amber accent-3 black-text littleSpace" id="run"><i class="material-icons" id="play_icon">play_arrow</i></a>
                 </div>
-                <div class="col s3 offset-s6">
-                    <a class="waves-effect waves-light btn right amber accent-3 black-text" id="stop"><i class="material-icons" id="stop_icon">stop</i></a>
+                <div class="col s3 offset-s6 ">
+                    <a class="waves-effect waves-light btn right amber accent-3 black-text littleSpace" id="stop"><i class="material-icons" id="stop_icon">stop</i></a>
                 </div>
             </div>
         </div>

@@ -107,6 +107,8 @@ var app = {
           $(fillArray);
           $("#run").on("click", run);
           $("#stop").on("click", stop);
+          // $('.carousel').carousel();
+          $('.carousel.carousel').carousel({fullWidth: true, noWrap: true});
           $('.sidenav').sidenav();
         });
     },
