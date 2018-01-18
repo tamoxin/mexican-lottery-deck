@@ -30,36 +30,48 @@ var cards = [
 ];
 
 var interval;
-var currentCard;
+var card = 0;
 var state = "stopped";
+var deck = [];
 
-function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
-
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
-
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
+var shuffleArray = function() {
+  function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  
+    return array;
   }
-
-  return array;
 }
 
-
 var stop = function() {
+  card = 0;
   state = "stopped";
   clearInterval(interval);
+  $("#play_icon").text("play_arrow");
   document.getElementById('card').src = 'img/cards/01.png.webp';
 }
 
+var fillArray = function() {
+  for (let x = 1; x < 55; x++)
+    deck.push(x);
+}
+
 var run = function() {
+
+  if (state == "stopped")
+    $(shuffleArray);
 
   if (state == "running") {
     state = "paused";
@@ -71,10 +83,15 @@ var run = function() {
     interval = setInterval(changeCard, 1000);
 
     function changeCard() {
-      var card = Math.floor((Math.random() * 53));;
+      // var card = Math.floor((Math.random() * 53));
+
       if (card < 9)
-        document.getElementById('card').src = 'img/cards/0'+(card + 1 )+ '.png.webp';
-      else document.getElementById('card').src = 'img/cards/'+(card + 1 )+ '.png.webp';     
+        document.getElementById('card').src = 'img/cards/0'+deck[card] + '.png.webp';
+      else document.getElementById('card').src = 'img/cards/'+deck[card] + '.png.webp'; 
+
+      card++;
+      if (card == 54)
+        $(stop);
     }
   }
       
@@ -87,10 +104,10 @@ var app = {
 
         //initialize jquery methods
         $(document).ready(function(){
-            $("#run").on("click", run);
-            $("#stop").on("click", stop);
-            // $(".button-collapse").sideNav();
-            $('.sidenav').sidenav();
+          $(fillArray);
+          $("#run").on("click", run);
+          $("#stop").on("click", stop);
+          $('.sidenav').sidenav();
         });
     },
 
@@ -100,7 +117,7 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
       if (cordova.platformId == 'android') {
-        StatusBar.backgroundColorByHexString("#007ac1");
+        StatusBar.backgroundColorByHexString("#bf360c");
       }
     
       this.receivedEvent('deviceready');
